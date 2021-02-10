@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import { Link, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { purple, orange } from '@material-ui/core/colors';
+import NotFound from './components/NotFound';
+import Learn from './components/Learn/Learn';
+
+let theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    }
+  }
+});
+
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div style={{height: '70px'}}>
+          <Navbar />
+        </div>
+        <Footer>
+          <Link 
+            align='left'
+            style={{marginLeft: 20}}
+            variant='body1'
+            href='https://www.github.com/couscousdude'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+              Designed by Youwen Wu
+          </Link>
+        </Footer>
+        <Switch>
+          <Route 
+            exact 
+            path='/' 
+            render={() => (
+              <Redirect to='/home' />
+            )}
+          />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/learn' component={Learn} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
