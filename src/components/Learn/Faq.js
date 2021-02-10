@@ -6,6 +6,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PropTypes from 'prop-types';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,23 +24,26 @@ function Faq(props) {
 
     return (
         <div className={classes.root}>
-            { content.map(question => (
-                <Accordion>
-                    <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    >
-                    <Typography className={classes.heading}>{question.question}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                    <Typography>
-                        {question.answer}
-                    </Typography>
-                    </AccordionDetails>
-                </Accordion>
-            ))
-            }
+            <Grid justify='center' container spacing={3}>
+                { content.map(question => (
+                    <Grid item xl={5} lg={5} md={7} sm={12} xs={12} >
+                        <Accordion>
+                            <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                            >
+                                <Typography className={classes.heading}>{question.question}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    {question.answer}
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    </Grid>
+                ))}
+            </Grid>
         </div>
     );
 }

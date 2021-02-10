@@ -7,9 +7,9 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -20,33 +20,37 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CustomizedTimeline(props) {
+function CustomizedTimeline(props) {
     const { content } = props;
     const classes = useStyles();
 
     return (
         <Timeline align="alternate">
-            <TimelineItem>
+            { content.map((item, i) => (
+                <TimelineItem>
                 <TimelineOppositeContent>
-                {/* <Typography variant="body2" color="textSecondary">
-                    9:30 am
-                </Typography> */}
+                { item.caption
+                ? ( <Typography variant="h5">
+                        {item.caption}
+                    </Typography> ) : null }
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                <TimelineDot>
-                    <FastfoodIcon />
+                <TimelineDot color={item.caption ? 'primary' : 'grey'}>
+                    <item.icon />
                 </TimelineDot>
-                <TimelineConnector />
+                { i !== content.length - 1
+                    ? <TimelineConnector /> : null }
                 </TimelineSeparator>
                 <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                    Eat
+                        {item.title}
                     </Typography>
-                    <Typography>Because you need strength</Typography>
+                    <Typography>{item.body}</Typography>
                 </Paper>
                 </TimelineContent>
             </TimelineItem>
+            ))}
         {/* <TimelineItem>
             <TimelineOppositeContent>
             <Typography variant="body2" color="textSecondary">
@@ -101,4 +105,9 @@ export default function CustomizedTimeline(props) {
         </TimelineItem> */}
         </Timeline>
     );
+}
+
+export default CustomizedTimeline;
+CustomizedTimeline.propTypes = {
+    content: PropTypes.array.isRequired
 }

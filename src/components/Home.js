@@ -52,6 +52,8 @@ function Home(props) {
                         component={Link}
                         startIcon={<GitHubIcon />}
                         href='https://www.github.com/couscousdude/cellular-respiration'
+                        target='_blank'
+                        rel='noreferrer noopener'
                     >
                         Code
                     </Button>

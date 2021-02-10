@@ -10,6 +10,7 @@ const useStyles = makeStyles({
         width: '100%',
         backgroundColor: 'white',
         color: 'black',
+        zIndex: 1
     }
 });
 

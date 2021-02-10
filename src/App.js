@@ -25,18 +25,20 @@ function App() {
         <div style={{height: '70px'}}>
           <Navbar />
         </div>
-        <Footer>
-          <Link 
-            align='left'
-            style={{marginLeft: 20}}
-            variant='body1'
-            href='https://www.github.com/couscousdude'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-              Designed by Youwen Wu
-          </Link>
-        </Footer>
+        <div style={{height: '30px'}}>
+          <Footer>
+            <Link 
+              align='left'
+              style={{marginLeft: 20}}
+              variant='body1'
+              href='https://www.github.com/couscousdude'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+                Designed by Youwen Wu
+            </Link>
+          </Footer>
+        </div>
         <Switch>
           <Route 
             exact 
