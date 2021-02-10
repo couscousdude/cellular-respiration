@@ -21,6 +21,11 @@ const content = [
         icon: HelpIcon
     },
     {
+        title: 'There is an equation for cellular respiration',
+        body: 'The equation is C6H12O6 + 6O2 → 6CO2 + 6H2O. Notice that this is the exact opposite of the photosynthesis equation (6CO2 + 6H2O → C6H12O6 + 6O2).',
+        icon: PriorityHighIcon
+    },
+    {
         title: 'Releasing stored energy',
         body: 'The pyruvate produced from glycolysis feeds the Krebs cycle, which also produces 2 molecules of ATP.',
         icon: Filter2Icon,

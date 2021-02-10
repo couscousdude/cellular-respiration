@@ -26,7 +26,7 @@ function Faq(props) {
         <div className={classes.root}>
             <Grid justify='center' container spacing={3}>
                 { content.map(question => (
-                    <Grid item xl={5} lg={5} md={7} sm={12} xs={12} >
+                    <Grid item xl={5} lg={5} md={7} sm={10} xs={10} >
                         <Accordion>
                             <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -50,5 +50,8 @@ function Faq(props) {
 
 export default Faq;
 Faq.propTypes = {
-    content: PropTypes.array.isRequired
+    content: PropTypes.arrayOf(PropTypes.shape({
+        question: PropTypes.string,
+        answer: PropTypes.string,
+    }).isRequired).isRequired
 }

@@ -22,10 +22,6 @@ const content = [
         question: 'Where are the mitochondria?',
         answer: 'The mitochondria are located within the fluid that surrounds the nucleus, the cytoplasm.'
     },
-    {
-        'question': 'What is the Equation for Cellular Respiration?',
-        answer: 'The equation for cellular respiration is C6H12O6 + 6O2 → 6CO2 + 6H2O.'
-    }
 ];
 
 export default content;
