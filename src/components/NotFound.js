@@ -1,7 +1,10 @@
 import React from 'react';
-import { Typography, Link } from '@material-ui/core';
+import { Typography, Link, Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 export default function NotFound(props) {
+    let history = useHistory();
+
     return (
         <div style={{marginTop: 20}}>
             <Typography variant='h3' align='center'>
@@ -17,6 +20,9 @@ export default function NotFound(props) {
             <Typography variant='h5' style={{color: 'grey', marginTop: 20}} align='center'>
                 The requested resource was not found on this server
             </Typography>
+            <Button variant='contained' color='primary' style={{left: '50%', transform: 'translateX(-50%)', marginTop: 20}} onClick={() => history.push('/home')}>
+                Back to Home
+            </Button>
         </div>
     )
 };
