@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cellular-respiration/static/css/main.d91ef536.chunk.css",
+    "main.js": "/cellular-respiration/static/js/main.f7539842.chunk.js",
+    "main.js.map": "/cellular-respiration/static/js/main.f7539842.chunk.js.map",
+    "runtime-main.js": "/cellular-respiration/static/js/runtime-main.c933e548.js",
+    "runtime-main.js.map": "/cellular-respiration/static/js/runtime-main.c933e548.js.map",
+    "static/js/2.91d87613.chunk.js": "/cellular-respiration/static/js/2.91d87613.chunk.js",
+    "static/js/2.91d87613.chunk.js.map": "/cellular-respiration/static/js/2.91d87613.chunk.js.map",
+    "static/js/3.ca70fc13.chunk.js": "/cellular-respiration/static/js/3.ca70fc13.chunk.js",
+    "static/js/3.ca70fc13.chunk.js.map": "/cellular-respiration/static/js/3.ca70fc13.chunk.js.map",
+    "index.html": "/cellular-respiration/index.html",
+    "static/css/main.d91ef536.chunk.css.map": "/cellular-respiration/static/css/main.d91ef536.chunk.css.map",
+    "static/js/2.91d87613.chunk.js.LICENSE.txt": "/cellular-respiration/static/js/2.91d87613.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c933e548.js",
+    "static/js/2.91d87613.chunk.js",
+    "static/css/main.d91ef536.chunk.css",
+    "static/js/main.f7539842.chunk.js"
+  ]
+}
